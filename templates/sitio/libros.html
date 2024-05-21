@@ -1,0 +1,37 @@
+{% include 'sitio/cabecera.html' %}
+
+<div class="container">
+    <h1>Libros</h1>
+    <!-- Formulario de búsqueda -->
+    <form action="/buscar" method="post" class="form-inline my-2 my-lg-0">
+        <div class="input-group input-group-sm">
+            <input class="form-control mr-3" type="search" name="keyword" placeholder="Buscar por palabra clave" aria-label="Buscar">
+            <div class="input-group-append">
+                <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </div>
+        </div>
+    </form>
+    <div class="row mt-3">
+        {% if mensaje %}
+        <div class="alert alert-warning" role="alert">
+            {{ mensaje }}
+        </div>
+        {% endif %}
+        {% for libro in libros %}
+        <div class="col-md-3">
+            <div class="card">
+                <img class="card-img-top" src="/img/{{ libro[2] }}" alt="Title" style="width: 100%; height: 100%;">
+                <div class="card-body">
+                    <h4 class="card-title" style="font-family: Calibri, sans-serif; font-size: 14px; color: white;">{{ libro[1] }}</h4>
+                    <p class="card-text">
+                        <a name="" id=" "class="btn btn-success" href="{{ libro[3] }}" role="button">Descargar</a>
+                        </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% include 'sitio/pie.html' %}
+

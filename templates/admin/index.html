@@ -1,0 +1,13 @@
+{% include 'admin/cabecera.html' %}
+
+<div class="row align-items-md-stretch">
+    <div class="container">
+        <h1 class="display-3">Bienvenido <strong>{{ session ["usuario"]}}</strong> al administrador del sitio web</h1>
+            <p class="lead">Aquí podrá administrar los libros del sitio web</p>
+            <hr class="my-2">
+            <p class="lead">
+                <a class="btn btn-primary btn-lg" href="/libros" type="button">Empezar con la gentión</a>
+    </div>
+</div>
+
+{% include 'admin/pie.html' %}
